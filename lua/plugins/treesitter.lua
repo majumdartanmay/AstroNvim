@@ -39,6 +39,7 @@ return {
       context_commentstring = { enable = true, enable_autocmd = false },
       -- HACK: force install of shipped neovim parsers since TSUpdate doesn't correctly update them
       ensure_installed = {
+        "java",
         "bash",
         "c",
         "lua",
