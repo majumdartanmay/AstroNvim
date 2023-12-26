@@ -45,3 +45,36 @@ I am using <Leader>123 as short cut
 "a" : "test",
 "b" : "test"
 }
+
+## Debugger setup
+
+I am going to note down my lore of setting up debugger for Node JS. 
+I have tried multiple times and failed (thank god for VCS on nvim configurations)
+
+I have added the dependency of [mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js/tree/main)
+at lua/dap.lua. 
+
+Next, I have cloned [vscode-js-debug](https://github.com/microsoft/vscode-js-debug)
+in nvim-data. We can get the exact of nvim-data with 
+```
+:lua =print(vim.fn.stdpath('data'))
+```
+
+For my system, this points to `C:\Users\TANMAY\AppData\Local\nvim-data`
+
+I then manually built vscode-js-debug
+
+```
+cd vscode-js-debug
+npm install --legacy-peer-deps
+npx gulp vsDebugServerBundle
+mv dist out
+```
+
+Update:
+I acheived some level of success. I can see the debug UI. But I am getting the below error
+when trying to debug from docker
+`Debug adapter didn't respond. Either the adapter is slow (then wait and ignore this) or there is a problem with your adapter or `pwa-node` configuration. Check the logs for errors (:help dap.set_log_level)`
+
+I can not debug individual files. But its important to figure out how to attach
+to process.

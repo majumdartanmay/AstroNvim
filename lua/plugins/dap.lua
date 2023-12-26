@@ -1,6 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
-  enabled = vim.fn.has "win32" == 0,
+  enabled = true,
   dependencies = {
     {
       "jay-babu/mason-nvim-dap.nvim",
@@ -18,6 +18,10 @@ return {
       dependencies = { "nvim-cmp" },
       config = require "plugins.configs.cmp-dap",
     },
+    {
+      "mxsdev/nvim-dap-vscode-js",
+      config = require "plugins.configs.nvim-dap-vscode-js"
+    }
   },
   event = "User AstroFile",
 }
