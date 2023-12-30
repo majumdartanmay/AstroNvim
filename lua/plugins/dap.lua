@@ -1,3 +1,11 @@
+local js_based_languages = {
+  "typescript",
+  "javascript",
+  "typescriptreact",
+  "javascriptreact",
+  "vue",
+}
+
 return {
   "mfussenegger/nvim-dap",
   enabled = true,
@@ -20,7 +28,24 @@ return {
     },
     {
       "mxsdev/nvim-dap-vscode-js",
-      config = require "plugins.configs.nvim-dap-vscode-js"
+      config = require "plugins.configs.nvim-dap-vscode-js",
+      keys = {
+        {
+          "<leader>da",
+          function()
+            if vim.fn.filereadable(".vscode/launch.json") then
+              local dap_vscode = require("dap.ext.vscode")
+              dap_vscode.load_launchjs(nil, {
+                ["pwa-node"] = js_based_languages,
+                ["chrome"] = js_based_languages,
+                ["pwa-chrome"] = js_based_languages,
+              })
+            end
+            require("dap").continue()
+          end,
+          desc = "Run with Args",
+        },
+      }
     }
   },
   event = "User AstroFile",

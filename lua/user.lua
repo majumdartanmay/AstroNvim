@@ -77,3 +77,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+vim.keymap.set('i', '<C-b>', '<C-w>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-Del>', '<C-o>dw', { noremap = true, silent = true })

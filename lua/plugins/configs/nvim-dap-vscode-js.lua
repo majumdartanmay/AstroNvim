@@ -21,7 +21,7 @@ return function(_, opts)
       {
         type = "pwa-node",
         request = "attach",
-        name = "Attach",
+        name = "Default attach",
         processId = require'dap.utils'.pick_process,
         cwd = "${workspaceFolder}",
       },
