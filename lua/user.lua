@@ -3,7 +3,7 @@ local utils = require "astronvim.utils"
 
 
 local maps = require("astronvim.utils").empty_map_table()
-maps.n["<leader>a"] = { "ggvG", desc = "Select all" }
+maps.n["<leader>a"] = { "GVgg", desc = "Select all" }
 
 local range_formatting = function()
     local start_row, _ = unpack(vim.api.nvim_buf_get_mark(0, "<"))
