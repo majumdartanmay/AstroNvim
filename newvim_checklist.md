@@ -121,3 +121,13 @@ _launch and debug_ configuration
     userDataDir = false,
   }
 ```
+
+## Mason configurations that I need
+
+    ast-grep ast_grep
+    biome
+    js-debug-adapter
+    lua-language-server lua_ls
+    rust-analyzer rust_analyzer
+    typescript-language-server tsserver
+
