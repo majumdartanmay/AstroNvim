@@ -86,10 +86,11 @@ vim.keymap.set('n', '<M-c>', function()
     utils.notify("No buffer is open. Aborting copy-paste.");
     return;
   end
-  filePath = string.gsub(filePath, "\\", "/");
-  local command = string.format("redir @* | echo \"%s\" | redir END", filePath);
-  utils.notify("Copied file path succesfully");
-  vim.cmd(command);
+  -- filePath = string.gsub(filePath, "\\", "/");
+  -- local command = string.format("redir @* | echo \"%s\" | redir END", filePath);
+  utils.notify(("Copied: `%s`"):format(filePath))
+  vim.fn.setreg("+", filePath)
+  -- vim.cmd(command);
 end, { noremap = true, silent = true, desc = "Copy buffer path to clipboard" })
 
 vim.keymap.set('i', '<C-z>', '<C-o>u', { desc = "Undo" });
