@@ -1,4 +1,3 @@
-
 local utils = require "astronvim.utils"
 
 
@@ -92,3 +91,17 @@ require("mason-tool-installer").setup{
   },
   run_on_start = true,
 }
+
+-- Add ability to copy the path of current buffer
+vim.keymap.set('n', '<C-c>', function()
+  local filePath = vim.api.nvim_buf_get_name(0);
+  if filePath == "" then
+    utils.notify("No buffer is open. Aborting copy-paste.");
+    return;
+  end
+  filePath = string.gsub(filePath, "\\", "/");
+  local command = string.format("redir @* | echo \"%s\" | redir END", filePath);
+  utils.notify("Copied file path succesfully");
+  vim.cmd(command);
+end, { noremap = true, silent = true, desc = "Copy buffer path to clipboard" })
+
