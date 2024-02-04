@@ -80,3 +80,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.keymap.set('i', '<C-b>', '<C-w>', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-Del>', '<C-o>dw', { noremap = true, silent = true })
+
+require("mason-tool-installer").setup{
+  ensure_installed = {
+    "ast-grep",
+    "biome",
+    "js-debug-adapter",
+    "lua-language-server",
+    "rust-analyzer",
+    "typescript-language-server"
+  },
+  run_on_start = true,
+}

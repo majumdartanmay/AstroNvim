@@ -24,14 +24,5 @@ return {
       build = ":MasonUpdate",
       config = require "plugins.configs.mason",
     },
-    ensure_installed = {
-      "ast-grep ast_grep",
-      "biome",
-      "js-debug-adapter",
-      "lua-language-server",
-      "rust-analyzer",
-      "typescript-language-server"
-
-    }
   }
 }
