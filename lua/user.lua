@@ -108,5 +108,6 @@ vim.keymap.set('i', '<C-a>', '<C-o>:%y+<CR><CR>', {noremap = true, silent = fals
 vim.keymap.set('n', '<C-a>', ':%y+<CR><CR>', {noremap = true, silent = false, desc = "Select all in normal mode" });
 vim.keymap.set('i', '<C-]>', '<C-o>yiw' , {noremap = true, silent = false, desc = "Select word in normal mode" });
 vim.keymap.set('n', '<C-]>', 'yiw', { noremap = true, silent = false, desc = "Select word in insert mode" });
+vim.keymap.set('i', '<C-s>', '<C-o>:w<cr>', { noremap = true, silent = false, desc = "Save buffer" });
 
 require("user_configurations.harpoon");
