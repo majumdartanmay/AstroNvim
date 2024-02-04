@@ -100,6 +100,9 @@ return {
     },
     opts = function()
       local commentstring_avail, commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+      -- added by tanmay
+      local ft = require('Comment.ft');
+      ft.jsp = ft.get("html");
       return commentstring_avail and commentstring and { pre_hook = commentstring.create_pre_hook() } or {}
     end,
   },

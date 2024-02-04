@@ -111,3 +111,7 @@ vim.keymap.set('n', '<C-]>', 'yiw', { noremap = true, silent = false, desc = "Se
 vim.keymap.set('i', '<C-s>', '<C-o>:w<cr>', { noremap = true, silent = false, desc = "Save buffer" });
 
 require("user_configurations.harpoon");
+
+-- tresitter configuration
+vim.treesitter.language.register('html', 'jsp'); -- use html parser for jsp 
+
