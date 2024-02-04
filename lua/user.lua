@@ -104,3 +104,4 @@ require("user_configurations.harpoon");
 -- tresitter configuration
 vim.treesitter.language.register('html', 'jsp'); -- use html parser for jsp 
 
+require("user_configurations.transparent");
