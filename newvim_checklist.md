@@ -131,3 +131,9 @@ _launch and debug_ configuration
     rust-analyzer rust_analyzer
     typescript-language-server tsserver
 
+## Find diff between two files
+
+https://neovim.discourse.group/t/how-to-compare-two-files/3285/2
+
+If the two files are in two splits, try :windo diffthis.
+Otherwise, try :diffsplit.
