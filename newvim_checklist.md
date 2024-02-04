@@ -137,3 +137,9 @@ https://neovim.discourse.group/t/how-to-compare-two-files/3285/2
 
 If the two files are in two splits, try :windo diffthis.
 Otherwise, try :diffsplit.
+
+## Show both relative line numbers and absolute line numbers
+
+`vim.o.statuscolumn = "%s %l %r"`
+
+For some reason, this configuration is not working on my lua files. I  tried to add this on my user.lua
