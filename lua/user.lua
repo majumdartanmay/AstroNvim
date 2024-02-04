@@ -16,18 +16,7 @@ local range_formatting = function()
     })
 end
 
--- Stuff to just copy paste (my stylle)
-
 vim.keymap.set("v", "<leader>123", range_formatting, { desc = "Range Formatting" })
-vim.keymap.set("n", "dd", "\"_dd", { desc = "Remove line without cutting "})
-vim.keymap.set("n", "dw", "\"_dw", { desc = "Remove word without cutting "})
-vim.keymap.set("n", "diw", "\"_diw", { desc = "Remove WORD without cutting "})
-vim.keymap.set("n", "x", "\"_x", { desc = "Remove character without cutting "})
-
-vim.keymap.set("n", "<leader>dd", "dd", { desc = "Remove line with cutting "})
-vim.keymap.set("n", "<leader>dw", "dw", { desc = "Remove word with cutting"})
-vim.keymap.set("n", "<leader>x", "x", { desc = "Remove character with cutting "})
-vim.keymap.set("n", "<leader>diw", "diw", { desc = "Remove WORD with cutting " })
 
 -- Symbol renaming
 vim.keymap.set("n", "__", vim.lsp.buf.rename , { desc = "Remove line with cutting "})
