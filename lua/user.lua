@@ -93,7 +93,7 @@ require("mason-tool-installer").setup{
 }
 
 -- Add ability to copy the path of current buffer
-vim.keymap.set('n', '<C-c>', function()
+vim.keymap.set('n', '<M-c>', function()
   local filePath = vim.api.nvim_buf_get_name(0);
   if filePath == "" then
     utils.notify("No buffer is open. Aborting copy-paste.");
@@ -105,3 +105,5 @@ vim.keymap.set('n', '<C-c>', function()
   vim.cmd(command);
 end, { noremap = true, silent = true, desc = "Copy buffer path to clipboard" })
 
+vim.keymap.set('i', '<C-z>', '<C-o>u', { desc = "Undo" });
+-- vim.keymap.set('i', '<C-Right>', '<C-o>b', { desc = "Go back on word" });
