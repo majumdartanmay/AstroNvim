@@ -106,4 +106,6 @@ vim.keymap.set('n', '<M-c>', function()
 end, { noremap = true, silent = true, desc = "Copy buffer path to clipboard" })
 
 vim.keymap.set('i', '<C-z>', '<C-o>u', { desc = "Undo" });
+vim.keymap.set('i', '<C-a>', '<C-o>:%y+<CR><CR>', {noremap = true, silent = false, desc = "Select all in insert mode" });
+vim.keymap.set('n', '<C-a>', ':%y+<CR><CR>', {noremap = true, silent = false, desc = "Select all in normal mode" });
 -- vim.keymap.set('i', '<C-Right>', '<C-o>b', { desc = "Go back on word" });
